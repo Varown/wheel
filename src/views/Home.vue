@@ -4,6 +4,11 @@
       <Input value="你好" :disabled="true"/>
 
       <Input value="哈哈"/>
+      <Input value="" @change="updateValue"
+                     @input="updateValue"
+                    @blur="updateValue"
+                   @focus="updateValue"
+      />
     </div>
 
     <div class="box">
@@ -47,6 +52,8 @@
   })
   export default class Home extends Vue {
     loading = false;
-
+    updateValue=(e: string)=>{
+      console.log(e)
+    }
   }
 </script>
