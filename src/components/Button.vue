@@ -48,7 +48,7 @@
      outline: none;
    }
     > .icon{
-      width: 1em; height: 1em;
+
       padding-top: .1em;
       order: 1;
       margin-right: .1em;

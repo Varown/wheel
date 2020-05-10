@@ -9,6 +9,7 @@
     <Button >
       按钮
     </Button>
+    <Icon name="left" />
   </div>
 </template>
 
