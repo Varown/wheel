@@ -11,7 +11,7 @@
        <span class="errorMessage"> {{error}}</span>
      </template>
 
-   </label>
+   </label> 
 
 </template>
 
