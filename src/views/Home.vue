@@ -1,9 +1,9 @@
 <template>
   <div >
-    <Button icon="right"  icon-position="right">
+    <Button icon="right"  icon-position="right" loading="true">
       按钮
     </Button>
-    <Button icon="settings" >
+    <Button icon="settings"  >
       按钮
     </Button>
     <Button >

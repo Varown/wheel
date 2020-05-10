@@ -1,7 +1,7 @@
 <template>
   <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
-    <Icon class="icon" v-if="icon" :name="icon"/>
-    <Icon class="loading"  name="loading"/>
+    <Icon class="icon" v-if="icon&&!loading" :name="icon"/>
+    <Icon class="loading icon" v-if="loading"  name="loading"/>
     <span class="content">
       <slot></slot>
     </span>
@@ -21,7 +21,7 @@
   export default class Button extends Vue {
     @Prop() icon!: string;
     @Prop({default: 'left'}) iconPosition!: string;
-
+    @Prop() loading!: boolean;
   }
 </script>
 
@@ -62,7 +62,6 @@
     }
     &.icon-right{
       > .icon{
-        width: 1em; height: 1em;
         padding-top: .1em;
         order: 2;
         margin-right: 0;
@@ -73,7 +72,7 @@
       }
     }
     .loading{
-
+      padding-top: .1em;
       animation:spin 2s infinite linear ;
     }
   }
