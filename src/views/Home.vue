@@ -10,7 +10,13 @@
     <Button >
       按钮
     </Button>
-    <Icon name="left" />
+    <ButtonGroup>
+      <Button icon="left">上一页</Button>
+    </ButtonGroup>
+    <ButtonGroup>
+      <Button icon="right" icon-position="right">下一页</Button>
+    </ButtonGroup>
+
   </div>
 </template>
 
@@ -20,9 +26,10 @@
   import {Component} from 'vue-property-decorator';
   import Button from '@/components/Button.vue';
   import Icon from '@/components/Icons.vue';
+  import ButtonGroup from '@/components/ButtonGroup.vue';
   @Component({
 
-    components: {Icon, Button}
+    components: {ButtonGroup, Icon, Button}
   })
   export default class Home extends Vue {
      loading=false
