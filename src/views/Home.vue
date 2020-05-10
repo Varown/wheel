@@ -1,9 +1,10 @@
 <template>
   <div >
-    <Button icon="right"  icon-position="right" loading="true">
+    <Button icon="right"  icon-position="right">
       按钮
     </Button>
-    <Button icon="settings"  >
+    <Button icon="settings" @click="loading=!loading"
+            :loading="loading" >
       按钮
     </Button>
     <Button >
@@ -20,9 +21,10 @@
   import Button from '@/components/Button.vue';
   import Icon from '@/components/Icons.vue';
   @Component({
+
     components: {Icon, Button}
   })
   export default class Home extends Vue {
-
+     loading=false
   }
 </script>
