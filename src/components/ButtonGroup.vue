@@ -3,7 +3,25 @@
     <slot></slot>
   </div>
 </template>
-<style lang="scss">
+
+
+<script lang="ts">
+  import Vue from 'vue';
+  import {Component} from 'vue-property-decorator';
+
+  @Component
+  export default class ButtonGroup extends Vue {
+    mounted () {
+      for (const node of this.$el.children) {
+        const name = node.nodeName.toLowerCase()
+        if (name !== 'button') {
+          console.warn(`ButtonGroup 的子元素应该全是 Button，但是你写的是 ${name}`)
+        }
+      }
+    }
+  }
+</script>
+<style lang="scss" scoped>
   .g-button-group {
     display: inline-flex;
     vertical-align: middle;
@@ -27,20 +45,3 @@
     }
   }
 </style>
-
-<script lang="ts">
-  import Vue from 'vue';
-  import {Component} from 'vue-property-decorator';
-
-  @Component
-  export default class ButtonGroup extends Vue {
-    mounted () {
-      for (const node of this.$el.children) {
-        const name = node.nodeName.toLowerCase()
-        if (name !== 'button') {
-          console.warn(`ButtonGroup 的子元素应该全是 Button，但是你写的是 ${name}`)
-        }
-      }
-    }
-  }
-</script>

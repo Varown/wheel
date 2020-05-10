@@ -5,7 +5,7 @@
     <Icon class="icon" v-if="icon&&!loading" :name="icon"/>
     <Icon class="loading icon" v-if="loading"  name="loading"/>
     <span class="content">
-      <slot></slot>
+      <slot/>
     </span>
 
   </button>
@@ -44,6 +44,8 @@
     border: 1px solid var(--border-color);
     background: var(--button-bg);
     vertical-align: middle;
+    margin-left: 2px;
+  ;
   &:hover {
      border-color: var(--border-color-hover);
    }
