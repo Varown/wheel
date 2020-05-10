@@ -1,9 +1,14 @@
 <template>
   <div >
-    <Button>
-      <Icon name="left"/>
+    <Button icon="right"  icon-position="right">
+      按钮
     </Button>
-
+    <Button icon="settings" >
+      按钮
+    </Button>
+    <Button >
+      按钮
+    </Button>
   </div>
 </template>
 
