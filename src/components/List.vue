@@ -1,5 +1,8 @@
 <template>
-  <div class="col" :class="[`col-${span}`]" :style="colStyle">
+  <div class="col"
+
+       :class="[span&&`col-${span}`,offset&&`offset-${offset}`]"
+       >
     <slot></slot>
   </div>
 </template>
@@ -10,7 +13,10 @@
     props:{
       span:{
         type:[Number,String]
-      }
+      },
+      offset: {
+        type: [Number, String]
+      },
     }
   };
 </script>
@@ -24,6 +30,70 @@
       &.#{$class-prefix}#{$n} {
         width: ($n / 24) * 100%;
       }
+    }
 
+    $class-prefix: offset-;
+    @for $n from 1 through 24 {
+      &.#{$class-prefix}#{$n} {
+        margin-left: ($n / 24) * 100%;
+      }
+    }
+
+    @media (min-width: 577px) {
+      $class-prefix: col-ipad-;
+      @for $n from 1 through 24 {
+        &.#{$class-prefix}#{$n} {
+          width: ($n / 24) * 100%;
+        }
+      }
+      $class-prefix: offset-ipad-;
+      @for $n from 1 through 24 {
+        &.#{$class-prefix}#{$n} {
+          margin-left: ($n / 24) * 100%;
+        }
+      }
+    }
+    @media (min-width: 769px){ // 770
+      $class-prefix: col-narrow-pc-;
+      @for $n from 1 through 24 {
+        &.#{$class-prefix}#{$n} {
+          width: ($n / 24) * 100%;
+        }
+      }
+      $class-prefix: offset-narrow-pc-;
+      @for $n from 1 through 24 {
+        &.#{$class-prefix}#{$n} {
+          margin-left: ($n / 24) * 100%;
+        }
+      }
+    }
+    @media (min-width: 993px) {
+      $class-prefix: col-pc-;
+      @for $n from 1 through 24 {
+        &.#{$class-prefix}#{$n} {
+          width: ($n / 24) * 100%;
+        }
+      }
+      $class-prefix: offset-pc-;
+      @for $n from 1 through 24 {
+        &.#{$class-prefix}#{$n} {
+          margin-left: ($n / 24) * 100%;
+        }
+      }
+    }
+    @media (min-width: 1201px) {
+      $class-prefix: col-wide-pc-;
+      @for $n from 1 through 24 {
+        &.#{$class-prefix}#{$n} {
+          width: ($n / 24) * 100%;
+        }
+      }
+      $class-prefix: offset-wide-pc-;
+      @for $n from 1 through 24 {
+        &.#{$class-prefix}#{$n} {
+          margin-left: ($n / 24) * 100%;
+        }
+      }
+    }
   }
 </style>

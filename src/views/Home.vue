@@ -5,8 +5,9 @@
       <List class="col" span="10">2</List>
     </Row>
     <Row>
-      <List class="col" >6</List>
-      <List class="col" >9</List>
+      <List class="col" span="4" >6</List>
+      <List class="col" span="6"  offset="4">9</List>
+      <List class="col" span="6"  offset="4">9</List>
     </Row>
 
     <div class="box">
