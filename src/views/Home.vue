@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Row gutter="20">
+    <Row gutter="40">
      <List class="col" span="14" >1</List>
       <List class="col" span="10">2</List>
     </Row>
