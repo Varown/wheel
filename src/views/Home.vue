@@ -1,7 +1,26 @@
 <template>
   <div id="app">
 
-
+    <Row>
+      <List span="24" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </List>
+      <List span="24" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </List>
+      <List span="24" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </List>
+      <List span="24" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </List>
+      <List span="24" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </List>
+      <List span="24" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </List>
+    </Row>
 
 
     <Row gutter="20">
@@ -56,9 +75,10 @@
   </div>
 </template>
 <style>
-  .col{
+  .demo {
+    background: #ddd;
+    border: 1px solid #666;
     height: 100px;
-    width: 50%;
   }
 </style>
 
