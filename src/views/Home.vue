@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <Row>
-     <List class="col" span="14">1</List>
+    <Row gutter="20">
+     <List class="col" span="14" >1</List>
       <List class="col" span="10">2</List>
     </Row>
-    <Row>
-      <List class="col" span="4" >6</List>
-      <List class="col" span="6"  offset="4">9</List>
-      <List class="col" span="6"  offset="4">9</List>
+    <Row gutter="20">
+      <List >6</List>
+      <List >9</List>
+      <List >9</List>
     </Row>
 
     <div class="box">
@@ -43,10 +43,8 @@
 </template>
 <style>
   .col{
-    border: 1px solid red;
     height: 100px;
     width: 50%;
-    background: #42b983;
   }
 </style>
 

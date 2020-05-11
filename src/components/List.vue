@@ -2,8 +2,11 @@
   <div class="col"
 
        :class="[span&&`col-${span}`,offset&&`offset-${offset}`]"
-       >
-    <slot></slot>
+       :style="{paddingLeft: gutter/2+'px', paddingRight: gutter/2+'px'}"
+  >
+    <div style="border: 1px solid green; height: 100px;">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -17,7 +20,12 @@
       offset: {
         type: [Number, String]
       },
-    }
+    },
+    data () {
+      return {
+        gutter: 0,
+      }
+    },
   };
 </script>
 
@@ -39,61 +47,5 @@
       }
     }
 
-    @media (min-width: 577px) {
-      $class-prefix: col-ipad-;
-      @for $n from 1 through 24 {
-        &.#{$class-prefix}#{$n} {
-          width: ($n / 24) * 100%;
-        }
-      }
-      $class-prefix: offset-ipad-;
-      @for $n from 1 through 24 {
-        &.#{$class-prefix}#{$n} {
-          margin-left: ($n / 24) * 100%;
-        }
-      }
-    }
-    @media (min-width: 769px){ // 770
-      $class-prefix: col-narrow-pc-;
-      @for $n from 1 through 24 {
-        &.#{$class-prefix}#{$n} {
-          width: ($n / 24) * 100%;
-        }
-      }
-      $class-prefix: offset-narrow-pc-;
-      @for $n from 1 through 24 {
-        &.#{$class-prefix}#{$n} {
-          margin-left: ($n / 24) * 100%;
-        }
-      }
-    }
-    @media (min-width: 993px) {
-      $class-prefix: col-pc-;
-      @for $n from 1 through 24 {
-        &.#{$class-prefix}#{$n} {
-          width: ($n / 24) * 100%;
-        }
-      }
-      $class-prefix: offset-pc-;
-      @for $n from 1 through 24 {
-        &.#{$class-prefix}#{$n} {
-          margin-left: ($n / 24) * 100%;
-        }
-      }
-    }
-    @media (min-width: 1201px) {
-      $class-prefix: col-wide-pc-;
-      @for $n from 1 through 24 {
-        &.#{$class-prefix}#{$n} {
-          width: ($n / 24) * 100%;
-        }
-      }
-      $class-prefix: offset-wide-pc-;
-      @for $n from 1 through 24 {
-        &.#{$class-prefix}#{$n} {
-          margin-left: ($n / 24) * 100%;
-        }
-      }
-    }
   }
 </style>
