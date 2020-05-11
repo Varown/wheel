@@ -2,11 +2,11 @@
   <div id="app">
 
 
-    
+
 
     <Row gutter="20">
-      <List span="2"
-             :phone="{span:24}"
+      <List
+
              :ipad="{span:8}"
              :narrow-pc="{span:4}"
              :pc="{span:2}"
@@ -14,8 +14,7 @@
       >
         1
       </List>
-      <List span="22"
-             :phone="{span:24}"
+      <List
              :ipad="{span:16}"
              :narrow-pc="{span:20}"
              :pc="{span:22}"
