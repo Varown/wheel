@@ -2,22 +2,7 @@
   <div id="app">
 
     <Row>
-      <List span="24" :narrow-pc="{span:8}">
-        <div class="demo"></div>
-      </List>
-      <List span="24" :narrow-pc="{span:8}">
-        <div class="demo"></div>
-      </List>
-      <List span="24" :narrow-pc="{span:8}">
-        <div class="demo"></div>
-      </List>
-      <List span="24" :narrow-pc="{span:8}">
-        <div class="demo"></div>
-      </List>
-      <List span="24" :narrow-pc="{span:8}">
-        <div class="demo"></div>
-      </List>
-      <List span="24" :narrow-pc="{span:8}">
+      <List span="23" offset="1" :narrow-pc="{span:12, offset:12}">
         <div class="demo"></div>
       </List>
     </Row>
