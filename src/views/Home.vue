@@ -1,6 +1,7 @@
 <template>
   <div id="app">
 
+    <button @click="showToast">点我</button>
 
 
     <Row>
@@ -47,7 +48,8 @@
   }
 </style>
 
-<script lang="ts">
+<script lang="js">
+
   import Vue from 'vue';
   import {Component} from 'vue-property-decorator';
   import Button from '@/components/Button.vue';
@@ -56,13 +58,19 @@
   import Input from '@/components/Input.vue';
   import Row from '@/components/Row.vue';
   import List from '@/components/List.vue';
-
+  import Toast from '@/components/Toast.vue';
+  import Plugin from  '@/plugin/plugin.js'
+  Vue.use(Plugin)
   @Component({
 
-    components: {List, Row, Input, ButtonGroup, Icon, Button}
+    components: {Toast, List, Row, Input, ButtonGroup, Icon, Button}
   })
   export default class Home extends Vue {
+
     loading = false;
-    updateValue='你好'
+    updateValue='你好';
+    showToast(){
+      this.$toast('我是 message')
+    }
   }
 </script>
