@@ -4,10 +4,10 @@
      <List class="col" span="14" >1</List>
       <List class="col" span="10">2</List>
     </Row>
-    <Row gutter="20">
-      <List >6</List>
-      <List >9</List>
-      <List >9</List>
+    <Row gutter="10" align="right">
+      <List span="4">6</List>
+      <List span="4">9</List>
+      <List span="4" >9</List>
     </Row>
 
     <div class="box">
