@@ -1,33 +1,13 @@
 <template>
   <div id="app">
 
+
+
     <Row>
       <List span="23" offset="1" :narrow-pc="{span:12, offset:12}">
         <div class="demo"></div>
       </List>
     </Row>
-
-
-    <Row gutter="20">
-      <List
-
-             :ipad="{span:8}"
-             :narrow-pc="{span:4}"
-             :pc="{span:2}"
-             :wide-pc="{span:1}"
-      >
-        1
-      </List>
-      <List
-             :ipad="{span:16}"
-             :narrow-pc="{span:20}"
-             :pc="{span:22}"
-             :wide-pc="{span:23}"
-      >11
-      </List>
-    </Row>
-
-
     <div class="box">
       <Input value="你好" :disabled="true"/>
 
@@ -63,7 +43,7 @@
   .demo {
     background: #ddd;
     border: 1px solid #666;
-    height: 100px;
+    height: 50px;
   }
 </style>
 
