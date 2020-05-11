@@ -1,14 +1,29 @@
 <template>
   <div id="app">
-    <Row gutter="40">
-     <List class="col" span="14" >1</List>
-      <List class="col" span="10">2</List>
+
+
+    
+
+    <Row gutter="20">
+      <List span="2"
+             :phone="{span:24}"
+             :ipad="{span:8}"
+             :narrow-pc="{span:4}"
+             :pc="{span:2}"
+             :wide-pc="{span:1}"
+      >
+        1
+      </List>
+      <List span="22"
+             :phone="{span:24}"
+             :ipad="{span:16}"
+             :narrow-pc="{span:20}"
+             :pc="{span:22}"
+             :wide-pc="{span:23}"
+      >11
+      </List>
     </Row>
-    <Row gutter="10" align="right">
-      <List span="4">6</List>
-      <List span="4">9</List>
-      <List span="4" >9</List>
-    </Row>
+
 
     <div class="box">
       <Input value="你好" :disabled="true"/>
