@@ -1,5 +1,14 @@
 <template>
   <div id="app">
+    <Row>
+     <List class="col" span="14">1</List>
+      <List class="col" span="10">2</List>
+    </Row>
+    <Row>
+      <List class="col" >6</List>
+      <List class="col" >9</List>
+    </Row>
+
     <div class="box">
       <Input value="你好" :disabled="true"/>
 
@@ -7,11 +16,9 @@
       <Input v-model="updateValue"/>
       {{updateValue}}
     </div>
-
     <div class="box">
       <Input value="" error="姓名不可少于两个字"/>
     </div>
-
     <div class="box">
       <Button icon="right" icon-position="right">
         按钮
@@ -33,7 +40,14 @@
     </div>
   </div>
 </template>
-
+<style>
+  .col{
+    border: 1px solid red;
+    height: 100px;
+    width: 50%;
+    background: #42b983;
+  }
+</style>
 
 <script lang="ts">
   import Vue from 'vue';
@@ -42,10 +56,12 @@
   import Icon from '@/components/Icons.vue';
   import ButtonGroup from '@/components/ButtonGroup.vue';
   import Input from '@/components/Input.vue';
+  import Row from '@/components/Row.vue';
+  import List from '@/components/List.vue';
 
   @Component({
 
-    components: {Input, ButtonGroup, Icon, Button}
+    components: {List, Row, Input, ButtonGroup, Icon, Button}
   })
   export default class Home extends Vue {
     loading = false;
