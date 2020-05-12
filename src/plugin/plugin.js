@@ -1,23 +1,24 @@
 import Toast from "../components/Toast";
 
-export default {
+let currentToast
+/* helpers */
+function createToast ({Vue, message, propsData}) {
+  const Constructor = Vue.extend(Toast)
+  const toast = new Constructor({propsData})
+  toast.$slots.default = [message]
+  toast.$mount()
+  document.body.appendChild(toast.$el)
+  return toast
+}
 
-  install(Vue, option) {
-    Vue.prototype.$toast = function (message) {
-      const Constructor = Vue.extend(Toast);
-      const toast = new Constructor({
-        propsData:{
-          closeButton: {
-            text:'爱你',
-            callback(){
-              console.log('哈哈')
-            }
-          }
+
+export default {
+  install (Vue, options) {
+    Vue.prototype.$toast = function (message, toastOptions) {
+      if (currentToast) {
+        currentToast.close()
       }
-      });
-      toast.$slots.default = [message];
-      toast.$mount();
-      document.body.appendChild(toast.$el);
-    };
+      currentToast = createToast({Vue, message, propsData: toastOptions})
+    }
   }
-};
+    }
