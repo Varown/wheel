@@ -1,12 +1,11 @@
 <template>
-  <div class="toast">
+  <div class="toast" ref="toast">
     <slot v-if="!enableHtml"></slot>
     <div v-else v-html="$slots.default[0]"></div>
-    <div class="line"></div>
+    <div class="line" ref="line"></div>
     <span class="close"  v-if="closeButton" @click="onClickClose">
       {{closeButton.text}}
     </span>
-
   </div>
 </template>
 
@@ -40,7 +39,12 @@
         setTimeout(()=>{
           this.close()
         },this.autoCloseDelay*1000)
+        this.$nextTick(() => {
+          this.$refs.line.style.height =
+            `${this.$refs.toast.getBoundingClientRect().height}px`
+        })
       }
+
     },
     methods:{
       close(){
@@ -63,10 +67,10 @@
 
 <style scoped lang="scss">
   $font-size: 14px;
-  $toast-height: 40px;
+  $toast-min-height: 40px;
   $toast-bg: rgba(0, 0, 0, 0.75);
   .toast {
-    font-size: $font-size; height: $toast-height; line-height: 1.8;
+    font-size: $font-size;min-height: $toast-min-height; line-height: 1.8;
     position: fixed; top: 0; left: 50%; transform: translateX(-50%); display: flex;
     color: white;
     align-items: center;
@@ -74,15 +78,15 @@
     border-radius: 4px;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.50);
     padding: 0 16px;
-    .line{
-      border:1px red solid;
-      background: red;
-      height: 100%;
-    }
     .close{
-      padding: 5px;
+      padding:0 16px;
       text-align: center;
       flex-shrink: 0;
+    }
+    .line{
+      border:1px #666 solid;
+      margin-left: 16px;
+      min-height: 100%;
     }
   }
 
