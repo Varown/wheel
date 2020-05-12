@@ -1,6 +1,6 @@
 <template>
   <div class="toast">
-    <slot></slot>
+    <div v-html="$slots.default[0]"></div>
     <div class="line"></div>
     <span class="close"  v-if="closeButton" @click="onClickClose">
       {{closeButton.text}}
@@ -45,7 +45,7 @@
       onClickClose(){
         this.close()
         if (this.closeButton && typeof this.closeButton.callback === 'function') {
-          this.closeButton.callback(this)
+          this.closeButton.callback(this)//this === toast实例
         }
 
       }
