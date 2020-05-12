@@ -70,7 +70,7 @@
     loading = false;
     updateValue='你好';
     showToast(){
-      this.$toast('我是 message')
+      this.$toast('我是message')
     }
   }
 </script>
