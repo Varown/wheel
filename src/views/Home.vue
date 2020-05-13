@@ -1,9 +1,32 @@
 <template>
   <div id="app">
 
-    <button @click="showToast">点我</button>
+    <Tabs :selected.sync="selectedTab">
+      <TabsHead >
+        <template slot="actions">
+          <button>设置</button>
+        </template>
+        <TabsItem name="woman">
+          <Icon name="settings"></Icon>
+          美女
+        </TabsItem>
+        <TabsItem name="finance" disabled>财经</TabsItem>
+        <TabsItem name="sports">体育</TabsItem>
+      </TabsHead>
+
+      <TabsBody>
+        <TabsPane name="woman">美女相关资讯</TabsPane>
+        <TabsPane name="finance">财经相关资讯</TabsPane>
+        <TabsPane name="sports">体育相关资讯</TabsPane>
+      </TabsBody>
+
+    </Tabs>
 
 
+
+    <div class="box">
+      <button @click="showToast"> 点我</button>
+    </div>
     <Row>
       <List span="23" offset="1" :narrow-pc="{span:12, offset:12}">
         <div class="demo"></div>
@@ -50,27 +73,46 @@
 
 <script lang="js">
 
-  import Vue from 'vue';
-  import {Component} from 'vue-property-decorator';
-  import Button from '@/components/Button.vue';
-  import Icon from '@/components/Icons.vue';
-  import ButtonGroup from '@/components/ButtonGroup.vue';
-  import Input from '@/components/Input.vue';
-  import Row from '@/components/Row.vue';
-  import List from '@/components/List.vue';
-  import Toast from '@/components/Toast.vue';
-  import Plugin from  '@/plugin/plugin.js'
-  Vue.use(Plugin)
+  import Vue from "vue";
+  import {Component} from "vue-property-decorator";
+  import Button from "@/components/Button.vue";
+  import Icon from "@/components/Icons.vue";
+  import ButtonGroup from "@/components/ButtonGroup.vue";
+  import Input from "@/components/Input.vue";
+  import Row from "@/components/Row.vue";
+  import List from "@/components/List.vue";
+  import Toast from "@/components/Toast.vue";
+  import Plugin from "@/plugin/plugin.js";
+  import TabsHead from "@/components/TabsHead";
+  import TabsBody from "@/components/TabsBody";
+  import TabsItem from "@/components/TabsItem";
+  import TabsPane from "@/components/TabsPane";
+  import Tabs from "@/components/Tabs";
+
+  Vue.use(Plugin);
   @Component({
 
-    components: {Toast, List, Row, Input, ButtonGroup, Icon, Button}
+    components: {Tabs, TabsPane, TabsItem, TabsBody, TabsHead, Toast, List, Row, Input, ButtonGroup, Icon, Button}
   })
   export default class Home extends Vue {
 
     loading = false;
-    updateValue='你好';
-    showToast(){
-      this.$toast('我是message')
+    updateValue = "你好";
+    selectedTab='sports';
+
+    showToast() {
+      this.$toast(`你的智商目前为 ${parseInt(Math.random() * 100)}。你的智商需要充值！`, {
+        position: "bottom",
+        enableHtml: false,
+        closeButton: {
+          text: "已充值",
+          callback() {
+            console.log("他说已经充值智商了");
+          }
+        },
+      });
     }
   }
+
+
 </script>
