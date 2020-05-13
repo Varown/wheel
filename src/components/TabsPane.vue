@@ -43,8 +43,9 @@
 
 <style scoped lang="scss">
   .tabs-pans {
+    padding: 1em;
     &.active {
-      background: red;
+
     }
   }
 

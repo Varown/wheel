@@ -1,6 +1,7 @@
 <template>
   <div class="tabs-head">
     <slot></slot>
+    <div class="line" ref="line"></div>
     <div class="actions-wrapper">
     <slot name="actions"></slot>
     </div>
@@ -11,7 +12,11 @@
   export default {
     name: "TabsHead",
     inject:['eventBus'],
-
+    created () {
+      this.eventBus.$on('update:selected', (item, vm) => {
+        console.log(item)
+      })
+    }
   };
 </script>
 
@@ -19,14 +24,27 @@
 
 <style scoped lang="scss">
   $tab-height: 40px;
+  $blue: blue;
+  $border-color: #ddd;
   .tabs-head {
     display: flex;
     height: $tab-height;
     justify-content: flex-start;
-    align-items: center;
-    border: 1px solid red;
-  > .actions-wrapper {
-    margin-left: auto;
+    position: relative;
+    border-bottom: 1px solid $border-color;
+    > .line {
+      position: absolute;
+      bottom: 0;
+      width: 80px;
+      border: 1px solid $blue;
+
+    }
+    > .actions-wrapper {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1em;
+    }
   }
-  }
-</style>
+  </style>
