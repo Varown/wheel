@@ -12,9 +12,11 @@
   export default {
     name: "TabsHead",
     inject:['eventBus'],
-    created () {
+    mounted () {
       this.eventBus.$on('update:selected', (item, vm) => {
-        console.log(item)
+      const {width, left} = vm.$el.getBoundingClientRect()
+        this.$refs.line.style.width = `${width}px`
+        this.$refs.line.style.left = `${left}px`
       })
     }
   };
@@ -35,9 +37,9 @@
     > .line {
       position: absolute;
       bottom: 0;
-      width: 80px;
-      border: 1px solid $blue;
 
+      border: 1px solid $blue;
+      transition: all 350ms;
     }
     > .actions-wrapper {
       margin-left: auto;

@@ -33,9 +33,9 @@
     },
     mounted() {
       this.$children.forEach((vm) => {
-        if (vm.$options.name === 'GuluTabsHead') {
+        if (vm.$options.name === 'TabsHead') {
           vm.$children.forEach((childVm) => {
-            if (childVm.$options.name === 'GuluTabsItem'
+            if (childVm.$options.name === 'TabsItem'
               && childVm.name === this.selected) {
               this.eventBus.$emit('update:selected', this.selected, childVm)
             }
