@@ -1,13 +1,29 @@
 <template>
   <div id="app">
+    <div style="overflow: hidden;border: 1px solid green;margin-top: 100px; padding: 5px;"
+         @click="yyy">
+      <Popover>
+        <template slot="content">
+          <div>popover内容</div>
+        </template>
+        <button>点我</button>
+      </Popover>
+      <Popover>
+        <template slot="content">
+          <div>popover内容</div>
+        </template>
+        <button>点我</button>
+      </Popover>
+    </div>
 
+
+    <div class="box">
     <Tabs :selected.sync="selectedTab">
       <TabsHead >
         <template slot="actions">
           <button>设置</button>
         </template>
         <TabsItem name="woman">
-          <Icon name="settings"></Icon>
           美女
         </TabsItem>
         <TabsItem name="finance" disabled>财经</TabsItem>
@@ -23,7 +39,7 @@
     </Tabs>
 
 
-
+</div>
     <div class="box">
       <button @click="showToast"> 点我</button>
     </div>
@@ -88,11 +104,14 @@
   import TabsItem from "@/components/TabsItem";
   import TabsPane from "@/components/TabsPane";
   import Tabs from "@/components/Tabs";
+  import Popover from "@/components/Popover";
 
   Vue.use(Plugin);
   @Component({
 
-    components: {Tabs, TabsPane, TabsItem, TabsBody, TabsHead, Toast, List, Row, Input, ButtonGroup, Icon, Button}
+    components: {
+      Popover,
+      Tabs, TabsPane, TabsItem, TabsBody, TabsHead, Toast, List, Row, Input, ButtonGroup, Icon, Button}
   })
   export default class Home extends Vue {
 
@@ -111,6 +130,9 @@
           }
         },
       });
+    }
+    yyy(){
+      console.log('yyy')
     }
   }
 
