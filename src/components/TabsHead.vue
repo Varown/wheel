@@ -3,7 +3,7 @@
     <slot></slot>
     <div class="line" ref="line"></div>
     <div class="actions-wrapper">
-    <slot name="actions"></slot>
+      <slot name="actions"></slot>
     </div>
   </div>
 </template>
@@ -11,18 +11,16 @@
 <script>
   export default {
     name: "TabsHead",
-    inject:['eventBus'],
-    mounted () {
-      this.eventBus.$on('update:selected', (item, vm) => {
-      const {width, left} = vm.$el.getBoundingClientRect()
-        this.$refs.line.style.width = `${width}px`
-        this.$refs.line.style.left = `${left}px`
-      })
+    inject: ["eventBus"],
+    mounted() {
+      this.eventBus.$on("update:selected", (item, vm) => {
+        const {width, left} = vm.$el.getBoundingClientRect();
+        this.$refs.line.style.width = `${width}px`;
+        this.$refs.line.style.left = `${left}px`;
+      });
     }
   };
 </script>
-
-
 
 <style scoped lang="scss">
   $tab-height: 40px;
@@ -34,6 +32,7 @@
     justify-content: flex-start;
     position: relative;
     border-bottom: 1px solid $border-color;
+
     > .line {
       position: absolute;
       bottom: 0;
@@ -41,6 +40,7 @@
       border: 1px solid $blue;
       transition: all 350ms;
     }
+
     > .actions-wrapper {
       margin-left: auto;
       display: flex;
@@ -49,4 +49,4 @@
       padding: 0 1em;
     }
   }
-  </style>
+</style>

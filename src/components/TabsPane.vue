@@ -10,40 +10,40 @@
 <script>
   export default {
     name: "TabsPane",
-    inject:['eventBus'],
-    data () {
+    inject: ["eventBus"],
+    data() {
       return {
         active: false
-      }
+      };
     },
-    props:{
-      name:{
-        type: [String,Number],
-        required:true
+    props: {
+      name: {
+        type: [String, Number],
+        required: true
       }
     },
     computed: {
-      classes () {
+      classes() {
         return {
           active: this.active
-        }
+        };
       }
     },
     created() {
-      this.eventBus.$on('update:selected',
-        (name)=>{
+      this.eventBus.$on("update:selected",
+        (name) => {
           this.active = name === this.name;
-        })
+        });
     }
 
   };
 </script>
 
 
-
 <style scoped lang="scss">
   .tabs-pans {
     padding: 1em;
+
     &.active {
 
     }
