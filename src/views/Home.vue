@@ -3,13 +3,13 @@
 
     <div style="overflow: hidden;
     border: 1px solid green;margin: 40px; padding: 5px;">
-      <Popover position="right">
+      <Popover position="right" trigger="click">
         <template slot="content">
           <div>popover内容</div>
         </template>
         <Button>点我</Button>
       </Popover>
-      <Popover position="bottom">
+      <Popover position="bottom" trigger="click">
         <template slot="content">
           <div>popover内容</div>
         </template>
@@ -17,6 +17,21 @@
       </Popover>
     </div>
 
+    <div style="overflow: hidden;
+    border: 1px solid green;margin: 40px; padding: 5px;">
+      <Popover position="right" trigger="hover">
+        <template slot="content">
+          <div>popover内容</div>
+        </template>
+        <Button>点我</Button>
+      </Popover>
+      <Popover position="bottom" trigger="hover">
+        <template slot="content">
+          <div>popover内容</div>
+        </template>
+        <Button>点我</Button>
+      </Popover>
+    </div>
 
 
 
