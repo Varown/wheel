@@ -2,14 +2,14 @@
   <div id="app">
 
     <div style="overflow: hidden;
-    border: 1px solid green;margin-top: 40px; padding: 5px;">
-      <Popover>
+    border: 1px solid green;margin: 40px; padding: 5px;">
+      <Popover position="right">
         <template slot="content">
           <div>popover内容</div>
         </template>
         <Button>点我</Button>
       </Popover>
-      <Popover>
+      <Popover position="bottom">
         <template slot="content">
           <div>popover内容</div>
         </template>
@@ -19,7 +19,7 @@
 
 
 
-
+<div class="box">
     <Tabs :selected.sync="selectedTab">
         <TabsHead>
           <template slot="actions">
@@ -39,7 +39,7 @@
         </TabsBody>
 
       </Tabs>
-
+</div>
     <div class="box">
       <Button @click="showToast"> 点我</Button>
     </div>
