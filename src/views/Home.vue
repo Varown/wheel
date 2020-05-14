@@ -1,47 +1,47 @@
 <template>
   <div id="app">
-    <div style="overflow: hidden;border: 1px solid green;margin-top: 100px; padding: 5px;"
-         @click="yyy">
+
+    <div style="overflow: hidden;
+    border: 1px solid green;margin-top: 40px; padding: 5px;">
       <Popover>
         <template slot="content">
           <div>popover内容</div>
         </template>
-        <button>点我</button>
+        <Button>点我</Button>
       </Popover>
       <Popover>
         <template slot="content">
           <div>popover内容</div>
         </template>
-        <button>点我</button>
+        <Button>点我</Button>
       </Popover>
     </div>
 
 
-    <div class="box">
+
+
     <Tabs :selected.sync="selectedTab">
-      <TabsHead >
-        <template slot="actions">
-          <button>设置</button>
-        </template>
-        <TabsItem name="woman">
-          美女
-        </TabsItem>
-        <TabsItem name="finance" disabled>财经</TabsItem>
-        <TabsItem name="sports">体育</TabsItem>
-      </TabsHead>
+        <TabsHead>
+          <template slot="actions">
+            <Button>设置</Button>
+          </template>
+          <TabsItem name="woman">
+            美女
+          </TabsItem>
+          <TabsItem name="finance" disabled>财经</TabsItem>
+          <TabsItem name="sports">体育</TabsItem>
+        </TabsHead>
 
-      <TabsBody>
-        <TabsPane name="woman">美女相关资讯</TabsPane>
-        <TabsPane name="finance">财经相关资讯</TabsPane>
-        <TabsPane name="sports">体育相关资讯</TabsPane>
-      </TabsBody>
+        <TabsBody>
+          <TabsPane name="woman">美女相关资讯</TabsPane>
+          <TabsPane name="finance">财经相关资讯</TabsPane>
+          <TabsPane name="sports">体育相关资讯</TabsPane>
+        </TabsBody>
 
-    </Tabs>
+      </Tabs>
 
-
-</div>
     <div class="box">
-      <button @click="showToast"> 点我</button>
+      <Button @click="showToast"> 点我</Button>
     </div>
     <Row>
       <List span="23" offset="1" :narrow-pc="{span:12, offset:12}">
@@ -111,13 +111,14 @@
 
     components: {
       Popover,
-      Tabs, TabsPane, TabsItem, TabsBody, TabsHead, Toast, List, Row, Input, ButtonGroup, Icon, Button}
+      Tabs, TabsPane, TabsItem, TabsBody, TabsHead, Toast, List, Row, Input, ButtonGroup, Icon, Button
+    }
   })
   export default class Home extends Vue {
 
     loading = false;
     updateValue = "你好";
-    selectedTab='sports';
+    selectedTab = "sports";
 
     showToast() {
       this.$toast(`你的智商目前为 ${parseInt(Math.random() * 100)}。你的智商需要充值！`, {
@@ -131,10 +132,7 @@
         },
       });
     }
-    yyy(){
-      console.log('yyy')
-    }
-  }
 
+  }
 
 </script>
