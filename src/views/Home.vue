@@ -19,7 +19,7 @@
 
 
 
-<div class="box">
+
     <Tabs :selected.sync="selectedTab">
         <TabsHead>
           <template slot="actions">
@@ -39,7 +39,7 @@
         </TabsBody>
 
       </Tabs>
-</div>
+
     <div class="box">
       <Button @click="showToast"> 点我</Button>
     </div>
