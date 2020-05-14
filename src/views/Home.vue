@@ -1,5 +1,13 @@
 <template>
   <div id="app">
+    <div class="box">
+    <Collapse single>
+      <CollapseItem title="标题一">内容一</CollapseItem>
+      <CollapseItem title="标题二">内容二</CollapseItem>
+      <CollapseItem title="标题三">内容三</CollapseItem>
+    </Collapse>
+    </div>
+
 
     <div style="overflow: hidden;
     border: 1px solid green;margin: 40px; padding: 5px;">
@@ -32,11 +40,6 @@
         <Button>点我</Button>
       </Popover>
     </div>
-
-
-
-
-
     <Tabs :selected.sync="selectedTab">
         <TabsHead>
           <template slot="actions">
@@ -56,7 +59,6 @@
         </TabsBody>
 
       </Tabs>
-
     <div class="box">
       <Button @click="showToast"> 点我</Button>
     </div>
@@ -122,11 +124,15 @@
   import TabsPane from "@/components/TabsPane";
   import Tabs from "@/components/Tabs";
   import Popover from "@/components/Popover";
+  import Collapse from "@/components/Collapse";
+  import CollapseItem from "@/components/CollapseItem";
 
   Vue.use(Plugin);
   @Component({
 
     components: {
+      CollapseItem,
+      Collapse,
       Popover,
       Tabs, TabsPane, TabsItem, TabsBody, TabsHead, Toast, List, Row, Input, ButtonGroup, Icon, Button
     }
