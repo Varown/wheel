@@ -24,14 +24,18 @@
       title:{
         type:String,
         required:true,
+      },
+      name:{
+        type: String,
       }
     },
     inject: ['eventBus'],
     mounted () {
-      this.eventBus && this.eventBus.$on('update:selected', (vm) => {
-        if (vm !== this) {
-
+      this.eventBus && this.eventBus.$on('update:selected', (name) => {
+        if (name !== this.name) {
           this.close()
+        }else {
+          this.show()
         }
       })
     },
@@ -40,13 +44,16 @@
         if(this.open){
           this.open=false
         }else {
-          this.open=true
-          this.eventBus.$emit('update:selected',this)
+
+          this.eventBus.$emit('update:selected',this.name)
 
         }
       },
       close () {
         this.open = false
+      },
+      show () {
+        this.open = true
       }
     }
   };

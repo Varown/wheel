@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div class="box">
-    <Collapse single>
-      <CollapseItem title="标题一">内容一</CollapseItem>
-      <CollapseItem title="标题二">内容二</CollapseItem>
-      <CollapseItem title="标题三">内容三</CollapseItem>
+    <Collapse single :selected="selectedItem">
+      <CollapseItem title="标题一" name="1">内容一</CollapseItem>
+      <CollapseItem title="标题二" name="2">内容二</CollapseItem>
+      <CollapseItem title="标题三" name="3">内容三</CollapseItem>
     </Collapse>
     </div>
 
@@ -142,6 +142,7 @@
     loading = false;
     updateValue = "你好";
     selectedTab = "sports";
+    selectedItem='2';
 
     showToast() {
       this.$toast(`你的智商目前为 ${parseInt(Math.random() * 100)}。你的智商需要充值！`, {
