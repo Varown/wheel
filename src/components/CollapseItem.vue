@@ -16,7 +16,8 @@
     name: "CollapseItem",
     data(){
       return{
-        open:false
+        open:false,
+        single:false,
       }
     },
 
@@ -32,11 +33,13 @@
     inject: ['eventBus'],
     mounted () {
       this.eventBus && this.eventBus.$on('update:selected', (name) => {
-        if (name !== this.name) {
-          this.close()
-        }else {
-          this.show()
-        }
+          if (name !== this.name) {
+            if(this.single){
+            this.close()
+            }
+          }else {
+            this.show()
+          }
       })
     },
     methods:{
