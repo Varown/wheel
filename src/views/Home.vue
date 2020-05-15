@@ -1,11 +1,12 @@
 <template>
   <div id="app">
     <div class="box">
-    <Collapse single :selected="selectedItem">
+    <Collapse single :selected.sync="selectedItem">
       <CollapseItem title="标题一" name="1">内容一</CollapseItem>
       <CollapseItem title="标题二" name="2">内容二</CollapseItem>
       <CollapseItem title="标题三" name="3">内容三</CollapseItem>
     </Collapse>
+      {{selectedItem}}
     </div>
 
 

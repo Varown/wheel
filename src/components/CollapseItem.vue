@@ -44,9 +44,7 @@
         if(this.open){
           this.open=false
         }else {
-
           this.eventBus.$emit('update:selected',this.name)
-
         }
       },
       close () {
