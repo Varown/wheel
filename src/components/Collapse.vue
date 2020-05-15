@@ -14,7 +14,7 @@
         default:false
       },
       selected:{
-        type: String
+        type: Array
       }
     },
     data () {
@@ -27,16 +27,26 @@
           eventBus: this.eventBus
         }
     },
-    mounted() {
-      this.eventBus.$emit('update:selected',this.selected)
-      this.eventBus.$on('update:selected',(name)=>{
-        this.$emit('update:selected',name)
+    mounted () {
+      this.eventBus.$emit('update:selected', this.selected)
+      this.eventBus.$on('update:addSelected', (name) => {
+        let selectedCopy = JSON.parse(JSON.stringify(this.selected))
+        if (this.single) {
+          selectedCopy = [name]
+        } else {
+          selectedCopy.push(name)
+        }
+        this.eventBus.$emit('update:selected', selectedCopy)
+        this.$emit('update:selected', selectedCopy)
       })
-      this.$children.forEach((vm)=>{
-        vm.single=this.single
+      this.eventBus.$on('update:removeSelected', (name) => {
+        const selectedCopy = JSON.parse(JSON.stringify(this.selected))
+        const index = selectedCopy.indexOf(name)
+        selectedCopy.splice(index, 1)
+        this.eventBus.$emit('update:selected', selectedCopy)
+        this.$emit('update:selected', selectedCopy)
       })
-
-      }
+    }
 
   };
 </script>
