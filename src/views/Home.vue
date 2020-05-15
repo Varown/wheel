@@ -142,7 +142,7 @@
     loading = false;
     updateValue = "你好";
     selectedTab = "sports";
-    selectedItem=['2'];
+    selectedItem=['2','1'];
 
     showToast() {
       this.$toast(`你的智商目前为 ${parseInt(Math.random() * 100)}。你的智商需要充值！`, {
