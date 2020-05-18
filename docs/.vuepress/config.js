@@ -29,7 +29,6 @@ module.exports = {
           '/components/input',
           '/components/grid',
           '/components/toast',
-          '/components/tabs',
           '/components/popover',
           '/components/collapse',
         ]

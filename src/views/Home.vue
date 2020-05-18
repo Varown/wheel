@@ -40,6 +40,7 @@
         <Button>点我</Button>
       </Popover>
     </div>
+
     <Tabs :selected.sync="selectedTab">
         <TabsHead>
           <template slot="actions">
@@ -59,6 +60,7 @@
         </TabsBody>
 
       </Tabs>
+
     <div class="box">
       <Button @click="showToast"> 点我</Button>
     </div>

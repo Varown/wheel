@@ -32,16 +32,18 @@
         };
       }
     },
-    created: function () {
-      this.eventBus.$on("update:selected",
-        (name) => {
+    created () {
+      if (this.eventBus) {
+        this.eventBus.$on('update:selected', (name) => {
           this.active = name === this.name;
-        });
+        })
+      }
     },
     methods: {
-      onClick() {
+      onClick () {
         if (this.disabled) { return }
-        this.eventBus.$emit("update:selected", this.name, this);
+        this.eventBus && this.eventBus.$emit('update:selected', this.name, this)
+        this.$emit('click', this)
       }
     }
   };
@@ -64,6 +66,7 @@
     }
     &.disabled {
       color: $disabled-text-color;
+      cursor: not-allowed;
     }
   }
 </style>

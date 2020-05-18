@@ -13,12 +13,15 @@
     name: "TabsHead",
     inject: ["eventBus"],
     mounted() {
+
       this.eventBus.$on("update:selected", (item, vm) => {
         const {width, left} = vm.$el.getBoundingClientRect();
         this.$refs.line.style.width = `${width}px`;
         this.$refs.line.style.left = `${left}px`;
       });
-    }
+    },
+
+
   };
 </script>
 
