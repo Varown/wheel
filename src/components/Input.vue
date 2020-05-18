@@ -16,19 +16,33 @@
 </template>
 
 
-<script lang="ts">
-  import Vue from 'vue';
-  import {Component, Prop} from 'vue-property-decorator';
-  import Icon from '@/components/Icons.vue';
-  @Component({
-    components: {Icon}
-  })
-  export default class Input extends Vue {
-    @Prop() value?: string;
-    @Prop() disabled?: boolean;
-    @Prop()  readonly?: boolean;
-    @Prop()  error?: string;
+<script>
+  import Icon from './Icons'
 
+  export default {
+    components: {Icon},
+    name: 'Input',
+    props: {
+      value: {
+        type: [String, Date]
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      readonly: {
+        type: Boolean,
+        default: false
+      },
+      error: {
+        type: String
+      }
+    },
+    methods:{
+      setRawValue(value){
+        this.$refs.input.value = value
+      }
+    }
   }
 </script>
 

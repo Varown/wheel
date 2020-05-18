@@ -81,7 +81,7 @@
       <Button icon="right" icon-position="right">
         按钮
       </Button>
-      <Button icon="settings" @click="loading=!loading"
+      <Button icon="setting" @click="loading=!loading"
               :loading="loading">
         按钮
       </Button>
@@ -95,6 +95,7 @@
         <Button>更多</Button>
         <Button icon="right" icon-position="right">下一页</Button>
       </ButtonGroup>
+
     </div>
   </div>
 </template>

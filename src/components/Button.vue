@@ -7,24 +7,33 @@
     <span class="content">
       <slot/>
     </span>
-
   </button>
+
 </template>
 
 
-<script lang="ts">
-  import Vue from 'vue';
-  import {Component, Prop} from 'vue-property-decorator';
-  import Icon from '@/components/Icons.vue';
-  @Component({
-    components: {Icon}
-  })
-
-  export default class Button extends Vue {
-    @Prop() icon!: string;
-    @Prop({default: 'left'}) iconPosition!: string;
-    @Prop() loading!: boolean;
-  }
+<script>
+  import Icon from "./Icons";
+  export default {
+    name: "Button",
+    components: {
+      Icon
+    },
+    props: {
+      icon: {},
+      loading: {
+        type: Boolean,
+        default: false
+      },
+      iconPosition: {
+        type: String,
+        default: "left",
+        validator(value) {
+          return value === "left" || value === "right";
+        }
+      }
+    }
+  };
 </script>
 
 <style lang="scss" scoped>
@@ -51,10 +60,10 @@
     &:hover { border-color: $border-color-hover; }
     &:active { background-color: $button-active-bg; }
     &:focus { outline: none; }
-    > .g-button-content { order: 2; }
+    > .content { order: 2; }
     > .icon { order: 1; margin-right: .1em; }
     &.icon-right {
-      > .g-button-content { order: 1; }
+      > .content { order: 1; }
       > .icon { order: 2; margin-right: 0; margin-left: .1em;}
     }
     .loading {

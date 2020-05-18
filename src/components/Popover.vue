@@ -20,9 +20,7 @@
       position: {
         type: String,
         default: "top",
-        validator(value) {
-          return ["top", "button", "left", "right"].indexOf(value) >= 0;
-        }
+
       },
       trigger: {
         type: String,
