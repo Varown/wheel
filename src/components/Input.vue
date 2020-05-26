@@ -15,7 +15,6 @@
 
 </template>
 
-
 <script>
   import Icon from './Icons'
 
