@@ -74,7 +74,7 @@
 </script>
 
 
-<style scoped lang="scss">
+<style lang="scss">
   .col {
     $class-prefix: col-;
     @for $n from 1 through 24 {

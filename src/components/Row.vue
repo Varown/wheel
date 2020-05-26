@@ -40,7 +40,7 @@
   }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
   .row{
     display: flex;
     flex-wrap: wrap;

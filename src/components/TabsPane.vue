@@ -40,7 +40,7 @@
 </script>
 
 
-<style scoped lang="scss">
+<style  lang="scss">
   .tabs-pans {
     padding: 1em;
 

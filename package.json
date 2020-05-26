@@ -1,8 +1,7 @@
 {
-  "name": "wheel",
-  "version": "0.0.1",
-  "private": true,
-  "main": "index.js",
+  "name": "varown",
+  "version": "0.0.2",
+  "main": "dist/index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

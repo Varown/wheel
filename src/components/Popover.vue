@@ -108,7 +108,7 @@
   };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
   $border-color: #333;
   $border-radius: 4px;
   .popover {
